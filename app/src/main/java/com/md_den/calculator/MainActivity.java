@@ -15,8 +15,9 @@ public class MainActivity extends AppCompatActivity {
     private String text;
     private ArrayList<Double> exampleElements = new ArrayList<>();
     private boolean isNextClear = false;
+    private String temp;
     MathActivity mathActivity = MathActivity.NONE;
-    DecimalFormat decimalFormat = new DecimalFormat("#.#########");
+    DecimalFormat decimalFormat = new DecimalFormat("#.########");
     DecimalFormat decimalFormat1 = new DecimalFormat("#.");
 
     @Override
@@ -139,7 +140,8 @@ public class MainActivity extends AppCompatActivity {
     public void clickPlus(View view) {
         mathActivity = MathActivity.PLUS;
         TextView textView = (TextView) findViewById(R.id.main_text);
-        exampleElements.add(Double.parseDouble(textView.getText().toString()));
+
+        exampleElements.add(Double.parseDouble((textView.getText().toString()).replace(',', '.')));
         textView.setText("0");
         isNextClear = true;
     }
@@ -147,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
     public void clickMinus(View view) {
         mathActivity = MathActivity.MINUS;
         TextView textView = (TextView) findViewById(R.id.main_text);
-        exampleElements.add(Double.parseDouble(textView.getText().toString()));
+        exampleElements.add(Double.parseDouble((textView.getText().toString()).replace(',', '.')));
         textView.setText("0");
         isNextClear = true;
     }
@@ -155,7 +157,7 @@ public class MainActivity extends AppCompatActivity {
     public void clickDivision(View view) {
         mathActivity = MathActivity.DIVISION;
         TextView textView = (TextView) findViewById(R.id.main_text);
-        exampleElements.add(Double.parseDouble(textView.getText().toString()));
+        exampleElements.add(Double.parseDouble((textView.getText().toString()).replace(',', '.')));
         textView.setText("0");
         isNextClear = true;
     }
@@ -163,33 +165,33 @@ public class MainActivity extends AppCompatActivity {
     public void clickMultiplication(View view) {
         mathActivity = MathActivity.MULTIPLICATION;
         TextView textView = (TextView) findViewById(R.id.main_text);
-        exampleElements.add(Double.parseDouble(textView.getText().toString()));
+        exampleElements.add(Double.parseDouble((textView.getText().toString()).replace(',', '.')));
         textView.setText("0");
         isNextClear = true;
     }
 
     public void click1x(View view) {
         TextView textView = (TextView) findViewById(R.id.main_text);
-        textView.setText(String.format("%s", 1 / Double.parseDouble(textView.getText().toString())));
+        textView.setText(String.format("%s", 1 / (Double.parseDouble((textView.getText().toString()).replace(',', '.')))));
         isNextClear = true;
     }
 
     public void clickx2(View view) {
         TextView textView = (TextView) findViewById(R.id.main_text);
-        textView.setText(String.format("%s", (Double.parseDouble(textView.getText().toString()) * Double.parseDouble(textView.getText().toString()))));
+        textView.setText(String.format("%s", ((Double.parseDouble((textView.getText().toString()).replace(',', '.'))) * (Double.parseDouble((textView.getText().toString()).replace(',', '.'))))));
         isNextClear = true;
     }
 
     public void clickSqr(View view) {
         TextView textView = (TextView) findViewById(R.id.main_text);
-        double sqrt = Math.sqrt(Double.parseDouble(textView.getText().toString()));
+        double sqrt = Math.sqrt(Double.parseDouble((textView.getText().toString()).replace(',', '.')));
         textView.setText(decimalFormat.format(sqrt));
         isNextClear = true;
     }
 
     public void clickInterest(View view) {
         TextView textView = (TextView) findViewById(R.id.main_text);
-        exampleElements.add(Double.parseDouble(textView.getText().toString()));
+        exampleElements.add(Double.parseDouble((textView.getText().toString()).replace(',', '.')));
         switch (mathActivity) {
             case PLUS:
                 result = exampleElements.get(exampleElements.size() - 2) + (exampleElements.get(exampleElements.size() - 2) / 100) * exampleElements.get(exampleElements.size() - 1);
@@ -241,19 +243,23 @@ public class MainActivity extends AppCompatActivity {
     public void plusMinus(View view) {
         TextView textView = (TextView) findViewById(R.id.main_text);
         if (!textView.getText().equals("0")) {
-            result = Double.parseDouble(textView.getText().toString()) * (-1);
+            result = (Double.parseDouble((textView.getText().toString()).replace(',', '.'))) * (-1);
             textView.setText(decimalFormat.format(result));
         }
     }
 
     public void comma(View view) {
         TextView textView = (TextView) findViewById(R.id.main_text);
-        Double d = Double.parseDouble(textView.getText().toString());
-        if (!isNextClear) {
-            textView.setText(decimalFormat1.format(d));
+        if ((textView.getText().toString().indexOf('.')) != -1  || ((textView.getText().toString()).indexOf(',')) != -1) {
+
         } else {
-            textView.setText("0.");
-            isNextClear = false;
+            Double d = (Double.parseDouble((textView.getText().toString()).replace(',', '.')));
+            if (!isNextClear) {
+                textView.setText(decimalFormat1.format(d));
+            } else {
+                textView.setText("0.");
+                isNextClear = false;
+            }
         }
     }
 
@@ -262,17 +268,17 @@ public class MainActivity extends AppCompatActivity {
         switch (mathActivity) {
             case PLUS:
                 textView = (TextView) findViewById(R.id.main_text);
-                exampleElements.add(Double.parseDouble(textView.getText().toString()));
+                exampleElements.add(Double.parseDouble((textView.getText().toString()).replace(',', '.')));
                 result = exampleElements.get(exampleElements.size() - 2) + exampleElements.get(exampleElements.size() - 1);
                 break;
             case MINUS:
                 textView = (TextView) findViewById(R.id.main_text);
-                exampleElements.add(Double.parseDouble(textView.getText().toString()));
+                exampleElements.add(Double.parseDouble((textView.getText().toString()).replace(',', '.')));
                 result = exampleElements.get(exampleElements.size() - 2) - exampleElements.get(exampleElements.size() - 1);
                 break;
             case DIVISION:
                 textView = (TextView) findViewById(R.id.main_text);
-                exampleElements.add(Double.parseDouble(textView.getText().toString()));
+                exampleElements.add(Double.parseDouble((textView.getText().toString()).replace(',', '.')));
 
                 result = exampleElements.get(exampleElements.size() - 2) / exampleElements.get(exampleElements.size() - 1);
                 if (Double.isInfinite(result)) {
@@ -282,7 +288,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case MULTIPLICATION:
                 textView = (TextView) findViewById(R.id.main_text);
-                exampleElements.add(Double.parseDouble(textView.getText().toString()));
+                exampleElements.add(Double.parseDouble((textView.getText().toString()).replace(',', '.')));
                 result = exampleElements.get(exampleElements.size() - 2) * exampleElements.get(exampleElements.size() - 1);
                 break;
         }
