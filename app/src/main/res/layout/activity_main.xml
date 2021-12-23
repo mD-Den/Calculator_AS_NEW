@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    style="@style/bigFont"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/main_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:textSize="70sp"
+        android:gravity="end"
+        android:inputType="numberDecimal"
+        android:hint="@string/textHint">
+    </EditText>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="2dp"
+        style="style"
+        android:paddingEnd="2dp"
+        android:layout_weight="1">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="clickInterest"
+            android:text="%">
+        </Button>
+
+        <Space
+            android:layout_width="2dp"
+            android:layout_height="2dp">
+        </Space>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="clickCE"
+            android:text="CE">
+        </Button>
+
+        <Space
+            android:layout_width="2dp"
+            android:layout_height="2dp">
+        </Space>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="clickC"
+            android:text="C">
+        </Button>
+
+        <Space
+            android:layout_width="2dp"
+            android:layout_height="2dp">
+        </Space>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="clickDel"
+            android:text="DEL">
+        </Button>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="2dp"
+        android:paddingEnd="2dp"
+        android:layout_weight="1">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="click1x"
+            android:text="1/x">
+        </Button>
+
+        <Space
+            android:layout_width="2dp"
+            android:layout_height="2dp">
+        </Space>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="clickx2"
+            android:text="x^2">
+        </Button>
+
+        <Space
+            android:layout_width="2dp"
+            android:layout_height="2dp">
+        </Space>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="clickSqr"
+            android:text="√x">
+        </Button>
+
+        <Space
+            android:layout_width="2dp"
+            android:layout_height="2dp">
+        </Space>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="clickDivision"
+            android:text="÷">
+        </Button>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="2dp"
+        android:paddingEnd="2dp"
+        android:layout_weight="1">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="seven"
+            android:text="7">
+        </Button>
+
+        <Space
+            android:layout_width="2dp"
+            android:layout_height="2dp">
+        </Space>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="eight"
+            android:text="8">
+        </Button>
+
+        <Space
+            android:layout_width="2dp"
+            android:layout_height="2dp">
+        </Space>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="nine"
+            android:text="9">
+        </Button>
+
+        <Space
+            android:layout_width="2dp"
+            android:layout_height="2dp">
+        </Space>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="clickMultiplication"
+            android:text="×">
+        </Button>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="2dp"
+        android:paddingEnd="2dp"
+        android:layout_weight="1">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="four"
+            android:text="4">
+        </Button>
+
+        <Space
+            android:layout_width="2dp"
+            android:layout_height="2dp">
+        </Space>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="five"
+            android:text="5">
+        </Button>
+
+        <Space
+            android:layout_width="2dp"
+            android:layout_height="2dp">
+        </Space>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="six"
+            android:text="6">
+        </Button>
+
+        <Space
+            android:layout_width="2dp"
+            android:layout_height="2dp">
+        </Space>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="clickMinus"
+            android:text="-">
+        </Button>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="2dp"
+        android:paddingEnd="2dp"
+        android:layout_weight="1">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="one"
+            android:text="1">
+        </Button>
+
+        <Space
+            android:layout_width="2dp"
+            android:layout_height="2dp">
+        </Space>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="two"
+            android:text="2">
+        </Button>
+
+        <Space
+            android:layout_width="2dp"
+            android:layout_height="2dp">
+        </Space>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="three"
+            android:text="3">
+        </Button>
+
+        <Space
+            android:layout_width="2dp"
+            android:layout_height="2dp">
+        </Space>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="clickPlus"
+            android:text="+">
+        </Button>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="2dp"
+        android:paddingEnd="2dp"
+        android:layout_weight="1">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="plusMinus"
+            android:text="+/-">
+        </Button>
+
+        <Space
+            android:layout_width="2dp"
+            android:layout_height="2dp">
+        </Space>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="clickNull"
+            android:text="0">
+        </Button>
+
+        <Space
+            android:layout_width="2dp"
+            android:layout_height="2dp">
+        </Space>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="comma"
+            android:text=",">
+        </Button>
+
+        <Space
+            android:layout_width="2dp"
+            android:layout_height="2dp">
+        </Space>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="total"
+            android:text="=">
+        </Button>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
+
